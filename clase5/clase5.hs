@@ -18,3 +18,8 @@ esPrimo :: Int -> Bool
 esPrimo 1 = False
 esPrimo n | menorDivisor n == n = True
           | otherwise = False
+         
+-- Ejercicio de nesimoprimo, está incompleto y tengo que reveerlo.         
+sigPrimo :: Int -> Int
+sigPrimo n | esPrimo n = n
+           | otherwise = (n+1)
