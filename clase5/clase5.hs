@@ -23,3 +23,5 @@ esPrimo n | menorDivisor n == n = True
 sigPrimo :: Int -> Int
 sigPrimo n | esPrimo n = n
            | otherwise = (n+1)
+
+-- Para seguir haciendo el resto de los ejercicios, re-estudiar lo basico de sucesiones
