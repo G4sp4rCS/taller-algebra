@@ -58,20 +58,21 @@ mdcHasta :: Int -> Int -> Int -> Int
 mdcHasta a b k | mod a k == 0 && mod b k == 0 = k 
                | otherwise = mdcHasta a b (k-1)
 
+division a d | a < d = (0,a)
+             | otherwise = (1+q, r)
+            where (q,r) = division (a-d) d
 
+{-- divisionEntera :: Int -> Int (Int, Int)
+divisionEntera a d | r==0=((signum a)*q,r)
+                   | a >= (q,r)
+                   | otherwise = (-q-1, d-r)
+                   where (q,r) = division (a-d) d
+ --}
+mcd :: Int -> Int -> Int
+mcd a 0 = a
+mcd a b =mcd b (a`mod`b)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+combinacionEntera n 0 = (n,1,0)
+combinacionEntera n 0 = (n,1,0)
+combinacionEntera a b = (g,t',s'-t'*(div a b))
+                    where (g,s',t') = combinacionEntera b (a`mod`b)
